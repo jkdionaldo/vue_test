@@ -1,5 +1,3 @@
-<!--Programming naming conventions-->
-
 <script setup>
 import { ref } from "vue";
 const theme = ref("dark");
@@ -31,8 +29,8 @@ function onClick() {
             <v-col cols="12" md="6" class="mx-auto">
               <v-card
                 class="mx-auto"
-                prepend-icon="mdi-login"
-                subtitle="Login"
+                prepend-icon="mdi-account-alert"
+                subtitle="Register Now"
                 width="70%"
               >
                 <template v-slot:title>
@@ -41,6 +39,20 @@ function onClick() {
 
                 <v-sheet class="mx-auto" width="85%">
                   <v-form fast-fail @submit.prevent>
+                    <v-text-field
+                      clearable
+                      label="Firstname"
+                      placeholder="Enter your Firstname"
+                      persistent-clear
+                    ></v-text-field>
+
+                    <v-text-field
+                      clearable
+                      label="Lastname"
+                      placeholder="Enter your Lastname"
+                      persistent-clear
+                    ></v-text-field>
+
                     <v-text-field
                       clearable
                       label="Username"
@@ -55,20 +67,23 @@ function onClick() {
                       persistent-clear
                     ></v-text-field>
 
-                    <v-class class="d-flex justify-space-between">
-                      <h6>Remember Me</h6>
-                      <h6 class="text-right">Forgot Password?</h6>
-                    </v-class>
+                    <v-text-field
+                      clearable
+                      label="Confirm Password"
+                      placeholder="Re-Type your Password"
+                      persistent-clear
+                    ></v-text-field>
 
-                    <v-btn class="mt-2" type="submit" block>Submit</v-btn>
+                    <v-btn class="my-4" type="submit" block>Submit</v-btn>
+
+                    <divider class="my-4"></divider>
+                    <h6 class="my-3 text-center">
+                      Already have an account?
+                      <RouterLink to="/login" class="text-primary"
+                        >Back to Login</RouterLink
+                      >
+                    </h6>
                   </v-form>
-
-                  <v-divider class="my-4"></v-divider>
-                  <h6 class="my-3 text-center">
-                    <RouterLink to="/register" class="text-primary"
-                      >Sign up here</RouterLink
-                    >
-                  </h6>
                 </v-sheet>
               </v-card>
             </v-col>
